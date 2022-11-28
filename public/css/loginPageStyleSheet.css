@@ -1,0 +1,35 @@
+body, html {
+    height: 100%;
+  }
+  .centerform {
+      
+    position: absolute !important;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width:20%;
+    padding: 8px;
+    background-image: url('/img/loginimage.jpg');
+    opacity: .99;
+    color: #fff;
+    
+    
+  }
+  
+  .backImage {
+    /* The image used */
+    background-image: url('/img/loginimage.jpg');
+  
+    /* Full height */
+    height: 100%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+     position: relative;
+    
+  }
+  body {
+    background-image: '/img/loginimage.jpg';
+  }

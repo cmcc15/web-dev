@@ -1,0 +1,220 @@
+<div class="row flex-lg-row-reverse align-items-center g-5 py-4 mb-4">
+    <div class="col-12 col-lg-6">
+      <img src="/img/movies.jpeg" width="607" height="510" class="d-block mx-lg-auto img-fluid" loading="lazy" alt="Cooking With Node.js">
+    </div>
+  
+    <div class="col-12 col-lg-6">
+      <h1 class="display-5 fw-bold mb-3">Huge selection of amazing movies</h1>
+      <p class="lead">
+        Welcome to the best place on the internet to upload and rent your movies from !!! Just simply Login to an account in order to simply upload your own films for rental and then you can simply rent what ever films you feel like on the home page.
+      </p>
+  
+    </div>
+  
+</div>
+
+<!-- Categories Start -->
+<h1>Categories</h1>
+
+<div class="row row-cols-2 row-cols-lg-6 g-2 g-lg-3 py-4">
+
+  <% if(categories != '') { %>
+    <% categories.forEach(function(category, index) { %>
+      <a href="/categories/<%- category.name %>" class="col text-center category__link">
+        <div class="category__img shadow">
+          <img src="img/<%- category.image %>" alt="<%- category.name %>" loading="lazy">
+        </div>
+        <div class="pt-1"><%- category.name %></div>
+      </a>
+    <% }) %>
+  <% } %>
+
+    
+
+    <a href="/categories" class="col text-center category__link">
+        <div class="category__img shadow">
+            <img src="img/viewall.png" alt="View All Categories" loading="lazy">
+        </div>
+        <div class="pt-1">View all</div>
+    </a>
+
+</div>
+
+<!-- Categories End -->
+
+
+
+<!-- Latest Start -->
+<section class="pb-4 pt-4">
+    <div class="d-flex mb-2 align-items-center">
+      <h2>Latest Movies</h2>
+      <a href="/explore-latest" class="ms-auto">View More</a>
+    </div>
+  
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+      <% if(movie != '') { %>
+        <% movie.latest.forEach(function(movie, index){ %>
+        <a href="/movie/<%= movie._id %>" class="col text-center category__link">
+          <div class="category__img category__img--large shadow">
+            <img src="/uploads/<%= movie.image %>" alt="<%= movie.name %>" loading="lazy">
+          </div>
+          <div class="pt-1"><%= movie.name %></div>
+        </a>
+        <% }) %>
+      <% } else { %>
+        <p>No items found.</p>
+      <% } %>
+    </div>
+        
+  
+    </div>
+  
+  </section>
+  <!-- Latest End -->
+
+
+  <!-- Sci- fi Start -->
+  <section class="pb-4 pt-4">
+    <div class="d-flex mb-2 align-items-center">
+      <h2>Sci-fi films </h2>
+      <a href="/categories/Sci-fi" class="ms-auto">View More</a>
+    </div>
+  
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+      <% if(typeof movie.Scifi !== 'undefined' && movie.Scifi.length > 0) { %>
+        <% movie.Scifi.forEach(function(movie, index){ %>
+        <a href="/movie/<%= movie._id %>" class="col text-center category__link">
+          <div class="category__img category__img--large shadow">
+            <img src="/uploads/<%= movie.image %>" alt="<%= movie.name %>" loading="lazy">
+          </div>
+          <div class="pt-1"><%= movie.name %></div>
+        </a>
+        <% }) %>
+      <% } else { %>
+        <p>No items found.</p>
+      <% } %>
+    </div>
+  </section>
+  <!-- Sci- fi End -->
+
+  <!-- Action Start -->
+  <section class="pb-4 pt-4">
+    <div class="d-flex mb-2 align-items-center">
+      <h2>Action films </h2>
+      <a href="/categories/Action" class="ms-auto">View More</a>
+    </div>
+  
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+      <% if(typeof movie.Action !== 'undefined' && movie.Action.length > 0) { %>
+        <% movie.Action.forEach(function(movie, index){ %>
+        <a href="/movie/<%= movie._id %>" class="col text-center category__link">
+          <div class="category__img category__img--large shadow">
+            <img src="/uploads/<%= movie.image %>" alt="<%= movie.name %>" loading="lazy">
+          </div>
+          <div class="pt-1"><%= movie.name %></div>
+        </a>
+        <% }) %>
+      <% } else { %>
+        <p>No items found.</p>
+      <% } %>
+    </div>
+  </section>
+  <!-- Action End -->
+
+  <!-- Horror Start -->
+  <section class="pb-4 pt-4">
+    <div class="d-flex mb-2 align-items-center">
+      <h2>Horror films </h2>
+      <a href="/categories/Horror" class="ms-auto">View More</a>
+    </div>
+  
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+      <% if(typeof movie.Horror !== 'undefined' && movie.Horror.length > 0) { %>
+        <% movie.Horror.forEach(function(movie, index){ %>
+        <a href="/movie/<%= movie._id %>" class="col text-center category__link">
+          <div class="category__img category__img--large shadow">
+            <img src="/uploads/<%= movie.image %>" alt="<%= movie.name %>" loading="lazy">
+          </div>
+          <div class="pt-1"><%= movie.name %></div>
+        </a>
+        <% }) %>
+      <% } else { %>
+        <p>No items found.</p>
+      <% } %>
+    </div>
+  </section>
+  <!-- Horror End -->
+
+  <!-- Thriller Start -->
+  <section class="pb-4 pt-4">
+    <div class="d-flex mb-2 align-items-center">
+      <h2>Thriller films </h2>
+      <a href="/categories/Thriller" class="ms-auto">View More</a>
+    </div>
+  
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+      <% if(typeof movie.Thriller !== 'undefined' && movie.Thriller.length > 0) { %>
+        <% movie.Thriller.forEach(function(movie, index){ %>
+        <a href="/movie/<%= movie._id %>" class="col text-center category__link">
+          <div class="category__img category__img--large shadow">
+            <img src="/uploads/<%= movie.image %>" alt="<%= movie.name %>" loading="lazy">
+          </div>
+          <div class="pt-1"><%= movie.name %></div>
+        </a>
+        <% }) %>
+      <% } else { %>
+        <p>No items found.</p>
+      <% } %>
+    </div>
+  </section>
+  <!-- Thriller End -->
+
+  <!-- Comedy Start -->
+  <section class="pb-4 pt-4">
+    <div class="d-flex mb-2 align-items-center">
+      <h2>Comedy films </h2>
+      <a href="/categories/Comedy" class="ms-auto">View More</a>
+    </div>
+  
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+      <% if(typeof movie.Comedy !== 'undefined' && movie.Comedy.length > 0) { %>
+        <% movie.Comedy.forEach(function(movie, index){ %>
+        <a href="/movie/<%= movie._id %>" class="col text-center category__link">
+          <div class="category__img category__img--large shadow">
+            <img src="/uploads/<%= movie.image %>" alt="<%= movie.name %>" loading="lazy">
+          </div>
+          <div class="pt-1"><%= movie.name %></div>
+        </a>
+        <% }) %>
+      <% } else { %>
+        <p>No items found.</p>
+      <% } %>
+    </div>
+  </section>
+  <!-- Comedy End -->
+
+  <!-- Crime Start -->
+  <section class="pb-4 pt-4">
+    <div class="d-flex mb-2 align-items-center">
+      <h2>Crime films </h2>
+      <a href="/categories/Crime" class="ms-auto">View More</a>
+    </div>
+  
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+      <% if(typeof movie.Crime !== 'undefined' && movie.Crime.length > 0) { %>
+        <% movie.Crime.forEach(function(movie, index){ %>
+        <a href="/movie/<%= movie._id %>" class="col text-center category__link">
+          <div class="category__img category__img--large shadow">
+            <img src="/uploads/<%= movie.image %>" alt="<%= movie.name %>" loading="lazy">
+          </div>
+          <div class="pt-1"><%= movie.name %></div>
+        </a>
+        <% }) %>
+      <% } else { %>
+        <p>No items found.</p>
+      <% } %>
+    </div>
+  </section>
+  <!-- Crime End -->
+
+  
